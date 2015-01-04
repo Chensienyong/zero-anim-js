@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML Game</title>
+    
+    <link rel="stylesheet" href="styles/chars.css">
+</head>
+<body>
+	<div id="canvas">
+	    <div id="viewport">
+	        <div id="zero" class="zero-stand"></div>
+	        <div id="wolf"></div>
+	        <div id="demon"></div>
+	    </div>
+	</div>
+
+	<div id="slay">
+		<button type="button" onclick="StartSlay()" id="start">Spawn The Demon!</button>
+		<button type="button" onclick="StopSlay()" visibility="hidden" id="stop">Stop!</button>
+	</div>
+    
+    <script type="text/javascript" src="scripts/world.js"></script>
+
+    <h1 id="watch"></h1>
+</body>
+</html>

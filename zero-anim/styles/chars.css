@@ -1,0 +1,269 @@
+@-webkit-keyframes zero-run-init {
+    from { background-position: 0px 0px; }
+    to { background-position: -275px 0px; }
+}
+
+@-webkit-keyframes zero-run {
+    from { background-position: -110px 0px; }
+    to { background-position: -825px 0px; }
+}
+
+@-webkit-keyframes zero-stand {
+    from { background-position: 0px -50px; }
+    to { background-position: -105px -50px; }
+}
+
+@-webkit-keyframes zero-move-right {
+    to   { left: 1027px; }
+}
+
+@-webkit-keyframes zero-move-left {
+    to   { left: 0px; }
+}
+
+@-webkit-keyframes zero-jump-up {
+    from { background-position: 0px -100px; }
+    to { background-position: -262.5px -100px; }
+}
+
+@-webkit-keyframes zero-move-up {
+    to {top : 160px;}
+}
+
+@-webkit-keyframes zero-jump-down {
+    from { background-position: -262.5px -100px; }
+    to { background-position: -525px -100px; }
+}
+
+@-webkit-keyframes zero-move-down {
+    to {top : 270px;}
+}
+
+@-webkit-keyframes zero-ride-car {
+    from { background-position: 0px -200px; }
+    to { background-position: -550px -200px; }
+}
+
+@keyframes bg-move {
+    from { background-position: 0px 0px; }
+    to { background-position: 1600px 0px; }
+}
+
+@-webkit-keyframes attack {
+    from { background-position: 1200px -250px; }
+    to { background-position: 0px -250px; }
+}
+
+@-webkit-keyframes die {
+    from { background-position: 0px -312px; }
+    to { background-position: -825px -312px; }
+}
+
+@-webkit-keyframes wolf-walk {
+    from { background-position: 0px -80px; }
+    to { background-position: -200px -80px; }
+}
+
+@-webkit-keyframes wolf-stand {
+    from { background-position: 0px 0px; }
+    to { background-position: 50px 0px; }
+}
+
+/*@-webkit-keyframes wolf-howl {
+    from { background-position: -150px 0px; }
+    to { background-position: -200px 0px; }
+}*/
+
+@-webkit-keyframes wolf-jump {
+    from { background-position: 0px -160px; }
+    to { background-position: -250px -160px; }
+}
+
+@-webkit-keyframes demon-move-left {
+    from { background-position: 0px 0px; }
+    to { background-position: -222px 0px; }
+}
+
+@-webkit-keyframes demon-jump-up {
+    from { background-position: 0px -50px; }
+    to { background-position: 0px -50px; }
+}
+
+@-webkit-keyframes demon-flying {
+    from { background-position: -45px -50px; }
+    to { background-position: -540px -50px; }
+}
+
+@-webkit-keyframes demon-dying {
+    from { background-position: 0px -100px; }
+    to { background-position: -315px -100px; }
+}
+
+#canvas {
+    width: 750px;
+    height: 356px;
+    overflow: hidden;
+}
+
+#viewport {
+    background-image: url("../images/bg_jungle_crop_top_full_photoshop_chop_tree.jpg");
+    background-position: 0px 0px;
+    height: 356px;
+    width: 1600px;
+}
+
+/*#viewport {
+    background-image: url("../images/bg_jungle_crop_top_full.jpg");
+    background-position: 0px 0px;
+    height: 356px;
+    width: 1082px;
+}*/
+
+#zero {
+    background-image: url("../images/zero_attack_die.png");
+    margin: 0 auto;
+    
+    width: 55px;
+    height: 50px;
+    
+    position: absolute;
+    top: 270px;
+    left: -110px;
+    
+    /*
+    background-position: -815px -660px;
+    */
+    
+    /*
+    -webkit-animation: 
+        zero-run-init 0.8s steps(5, end) 1,
+        zero-run 1s steps(8, end) infinite;
+    */
+}
+
+#wolf {
+    background-image: url("../images/wolf_photoshop.png");
+    margin: 0 auto;
+
+    width: 50px;
+    height: 40px;
+
+    position: absolute;
+    top: 280px;
+    left: -50px;
+}
+
+#demon {
+    background-image: url("../images/demon_flying.png");
+    margin: 0 auto;
+
+    display: none;
+
+    width: 37px;
+    height: 50px;
+
+    position: absolute;
+    top: 270px;
+    left: 713px;
+}
+
+#slay {
+    margin: 20px 300px;
+}
+
+#slay button {
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+
+#slay button:hover {
+    background-color: white;
+    color: black;
+}
+
+#start {
+    display: none;
+}
+
+#stop {
+    display: none;
+}
+
+.zero-stand {
+    -webkit-animation: zero-stand 1s steps(2, end) infinite;
+}
+
+.zero-run-right {
+    -webkit-animation: 
+        zero-move-right 0s linear infinite,
+        zero-run 1s steps(13, end) infinite;
+}
+
+.zero-run-left {
+    -webkit-animation: 
+        zero-move-left 0s linear infinite,
+        zero-run 1s steps(13, end) infinite;
+}
+
+.zero-run-instant {
+    -webkit-animation: zero-run 1s steps(13, end) 1;
+    -webkit-animation-delay: -1s;
+}
+
+.zero-jump-up{
+    -webkit-animation:
+        zero-move-up 0.3s linear 1,
+        zero-jump-up 0.3s steps(5,end) infinite;
+}
+
+.zero-jump-down{
+    -webkit-animation:
+        zero-move-down 0.3s linear 1,
+        zero-jump-down 0.3s steps(5,end) infinite;
+}
+
+.zero-ride-car {
+    -webkit-animation: zero-ride-car 1s steps(5, end) infinite;
+}
+
+.zero-bg-move {
+    -webkit-animation: bg-move 5s steps(1, end) infinite;
+}
+
+.zero-attack {
+    -webkit-animation: attack 0.8s steps(12, end) 1;
+}
+
+.zero-die {
+    -webkit-animation: die 1s steps(11, end) 1;
+}
+
+.wolf-run {
+    -webkit-animation: wolf-walk 0.5s steps(4, end) infinite;
+}
+
+/*.wolf-howl {
+    -webkit-animation: wolf-howl 0.3s steps(1, end) 1;
+}*/
+
+.wolf-start {
+    -webkit-animation: wolf-jump 0.7s steps(5, end) 2;
+}
+
+.demon-run-left {
+    -webkit-animation: demon-move-left 1s steps(6, end) infinite;
+}
+
+.demon-jump {
+    -webkit-animation: demon-jump-up 1s steps(1, end) infinite;
+}
+
+.demon-fly {
+    -webkit-animation: demon-flying 1s steps(11, end) infinite;
+}
+
+.demon-die {
+    -webkit-animation: demon-dying 1s steps(7, end) 1;
+}
