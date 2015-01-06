@@ -717,6 +717,7 @@ var demon = {
         this.el.style.webkitTransform = "rotateY(180deg)";
 
         if (newPos <= 135) {
+            newPos = 135;
             clearInterval(intervalDemonJump);
             this.el.classList.remove("demon-jump");
             this.el.classList.add("demon-fly");
@@ -864,13 +865,11 @@ websocket.onmessage = function (message) {
             if (zero.slaying) {
                 zero.moveRight();
                 wolf.moveRight();
-                websocket.send("right");
                 zero.right = true;
                 wolf.right = true;
             } else {
                 zero.moveBgRight();
                 wolf.moveBgRight();
-                websocket.send("right");
                 zero.right = true;
                 wolf.right = true;
             }
@@ -886,8 +885,12 @@ websocket.onmessage = function (message) {
         case "watch":
             var wm = document.querySelector("h1#watch");
             wm.innerHTML = "Watch Mode";
-            window.removeEventListener("keydown");
-            window.removeEventListener("keyup");
+            window.addEventListener("keydown", function(e){
+                keyState[e.keyCode || e.which] = false;
+            }, true);
+            window.addEventListener("keyup", function(e){
+                keyState[e.keyCode || e.which] = false;
+            }, true);
             document.getElementById("start").remove();
             break;
         case "attack":
